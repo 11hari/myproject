@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>Stock Trading Application</title>
+    <style>
+        table {
+            border-style:double;
+            border-collapse: collapse;
+            width: 20%;
+        }
+        td {
+            border-style:double;
+            border-collapse: collapse;
+            text-transform: uppercase;
+        }
+        th {
+            font-weight: bold;
+            border-style:double;
+            border-collapse: collapse;
+            text-transform: uppercase;
+        } 
+    </style>
+    <script>
+        function validateStock() {
+            var quantity = document.forms['stock']['qty'].value;
+            quantity = parseInt(quantity);
+            if(quantity < 10 || quantity > 100 || quantity % 10 !== 0)
+                alert("Please enter vaild quantity");
+        }
+
+    </script>
+</head>
+<body style="margin: 0.5in;">
+<div>
+    <table id="table">
+        <tr>
+            <th>ticker</th>
+            <th>price</th>
+        </tr>
+        <tr>
+            <td>wipro</td>
+            <td>298.45</td>
+        </tr>
+        <tr>
+            <td>infy</td>
+            <td>949.95</td>
+        </tr>
+        <tr>
+            <td>tcs</td>
+            <td>2713.70</td>
+        </tr>
+        <tr>
+            <td>techm</td>
+            <td>485.85</td>
+        </tr>
+    </table>
+</div>
+<div>
+    <form name="stock" onsubmit="validateStock()">
+        <h1>Stock Trading</h1>
+         <table id="table">
+            <tr>
+                <td>ticker:</td>
+                <td><input type="text" name="ticker" style='text-transform:uppercase'></input></td>
+            </tr>
+            <tr>
+                <td>quantity:</td>
+                <td><input type="number" name="qty"></td>
+            </tr>
+            <tr>
+                <td><input type="submit" name="submit" value="Submit"></td>
+           	<td></td>
+            </tr>
+        </table>
+    </form>
+</div>
+</body>
+</html>

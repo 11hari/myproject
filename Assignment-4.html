@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html>
+<head> 
+<title>BCCI</title>
+
+</head>
+<body>
+<div id="chartContainer" style="height: 300px; width: 100%;"></div>
+
+<script>
+window.onload = function () {
+
+var chart = new CanvasJS.Chart("chartContainer", {
+	animationEnabled: true,
+	theme: "light2",
+	title:{
+		text: "Team India T20 batting statistics line chart"
+	},
+	axisX:{
+		title : "Overs",
+	},
+	axisY:{
+		title : "Runs",
+		includeZero: false
+	},
+	data: [{        
+		type: "line",       
+		dataPoints: [
+			{x:5, y: 40},
+			{x:10, y: 35},
+			{x:15, y: 65, indexLabel: "highest",markerColor: "red", markerType: "triangle" },
+			
+			
+	                    ]
+	}]
+});
+chart.render();
+
+}
+</script>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js">
+</script>
+</body>
+</html>
